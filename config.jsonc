@@ -5,11 +5,13 @@
     "sway/workspaces",
     "sway/mode",
     "sway/scratchpad",
-    "tray"
-  ],
-  "modules-center": [
+    "tray",
     "sway/window"
   ],
+
+  "modules-center": [
+  ],
+
   "modules-right": [
     "custom/checkupdates",
     "network",
@@ -20,22 +22,24 @@
     "backlight",
     "battery",
     "battery#bat2",
-    "keyboard-state",
     "sway/language",
     "clock"
   ],
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
+
+"keyboard-state": {
+  "numlock": true,
+  "capslock": true,
+  "format": "{name} {icon}",
+  "format-icons": {
+    "locked": "",
+    "unlocked": ""
   },
+},
+
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>"
   },
+
   "sway/scratchpad": {
     "format": "{icon} {count}",
     "show-empty": false,
@@ -46,44 +50,24 @@
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
   },
-  "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
-    "interval": 5,
-    "consume-icons": {
-      "on": " "
-    },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " "
-    },
-    "repeat-icons": {
-      "on": " "
-    },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
-  },
-  "tray": {
-    "spacing": 10
-  },
+
 "clock": {
-  "format": "{:%d %B %H:%M}",                      // Status bar display (e.g., "14:30")
+    "format": "{:%a %d %b %H:%M}",
+    "tooltip": true,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+        "mode": "year",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "format": {
+            "months": "<span color='#cba6f7'><b>{}</b></span>",
+            "days": "<span color='#cdd6f4'>{}</span>",
+            "weeks": "<span color='#a6e3a1'><b>W{}</b></span>",
+            "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+"today": "<span color='#f38ba8'><b>{}</b></span>"
+        }
+    },
 },
   "cpu": {
     "format": "{usage}% ",
@@ -176,17 +160,7 @@
     },
     "on-click": "pavucontrol"
   },
-  "custom/media": {
-    "format": "{icon} {}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "x"
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
-  },
+
   "custom/power": {
     "format": "⏻ ",
     "tooltip": false,
@@ -207,6 +181,7 @@
     "return-type": "json",
     "max-length": 80
   },
+
   "custom/checkupdates": {
     "format": "{icon} {text}",
     "format-icons": {
@@ -219,6 +194,7 @@
     "on-click": "alacritty -e sudo pacman -Syu",
     "tooltip": true
   },
+
   "disk": {
     "interval": 30,
     "format": "{percentage_free}% ",

@@ -9,9 +9,9 @@
 }
 
 window#waybar {
-    background-color: #2E3440;
-    border-bottom: 0px solid #4C566A;
-    color: #D8DEE9;
+    background-color: #1E1E2E; /* Base */
+    border-bottom: 0px solid #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -28,31 +28,31 @@ button {
 
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #D8DEE9;
+    box-shadow: inset 0 -3px #CDD6F4; /* Text */
 }
 
 #workspaces button {
-    padding: 0 10px;
+    padding: 0 5px;
     background-color: transparent;
-    color: #D8DEE9;
+    color: #CDD6F4; /* Text */
 }
 
 #workspaces button:hover {
-    background: rgba(216, 222, 233, 0.2);
+    background: rgba(205, 214, 244, 0.2); /* Text with opacity */
 }
 
 #workspaces button.focused {
-    background-color: #4C566A;
-    box-shadow: inset 0 -3px #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    box-shadow: inset 0 -3px #CDD6F4; /* Text */
 }
 
 #workspaces button.urgent {
-    background-color: #BF616A;
+    background-color: #F38BA8; /* Red */
 }
 
 #mode {
-    background-color: #4C566A;
-    box-shadow: inset 0 -3px #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    box-shadow: inset 0 -3px #CDD6F4; /* Text */
 }
 
 #clock,
@@ -71,27 +71,27 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #D8DEE9;
-    background-color: #2E3440;
+    color: #CDD6F4; /* Text */
+    background-color: #1E1E2E; /* Base */
 }
 
 #clock {
-    background-color: #4C566A;
+    background-color: #585B70; /* Surface2 */
 }
 
 #battery {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
 }
 
 #battery.charging, #battery.plugged {
-    color: #D8DEE9;
-    background-color: #A3BE8C;
+    color: #1E1E2E; /* Base */
+    background-color: #A6E3A1; /* Green */
 }
 
 #battery.critical:not(.charging) {
-    background-color: #BF616A;
-    color: #D8DEE9;
+    background-color: #F38BA8; /* Red */
+    color: #CDD6F4; /* Text */
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -101,8 +101,8 @@ button:hover {
 
 @keyframes blink {
     to {
-        background-color: #D8DEE9;
-        color: #2E3440;
+        background-color: #CDD6F4; /* Text */
+        color: #1E1E2E; /* Base */
     }
 }
 
@@ -111,82 +111,80 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    background-color: #BF616A;
-    color: #D8DEE9;
+    background-color: #F38BA8; /* Red */
+    color: #CDD6F4; /* Text */
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #A3BE8C;
-    color: #2E3440;
+    background-color: #A6E3A1; /* Green */
+    color: #1E1E2E; /* Base */
 }
 
 label:focus {
-    background-color: #4C566A;
+    background-color: #585B70; /* Surface2 */
 }
 
 #cpu {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
 }
 
 #memory {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
 }
 
 #disk {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
 }
 
 #backlight {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
 }
 
 #network {
-    padding: 0 15px;
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
 }
 
 #network.disconnected {
-    background-color: #BF616A;
+    background-color: #F38BA8; /* Red */
 }
 
 #pulseaudio {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
 }
 
 #pulseaudio.muted {
-    background-color: #3B4252;
-    color: #5E81AC;
+    background-color: #313244; /* Surface0 */
+    color: #89B4FA; /* Blue */
 }
 
 #custom-media {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
     min-width: 100px;
 }
 
 #temperature {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
 }
 
 #temperature.critical {
-    background-color: #BF616A;
+    background-color: #F38BA8; /* Red */
 }
 
 #tray {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    color: #CDD6F4; /* Text */
 }
 
 #tray > .passive {
@@ -195,49 +193,50 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #BF616A;
+    background-color: #F38BA8; /* Red */
 }
 
 #idle_inhibitor {
-    background-color: #4C566A;
+    background-color: #585B70; /* Surface2 */
 }
 
 #idle_inhibitor.activated {
-    background-color: #D8DEE9;
-    color: #2E3440;
+    background-color: #CDD6F4; /* Text */
+    color: #1E1E2E; /* Base */
 }
 
 #mpd {
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
 }
 
 #mpd.disconnected {
-    background-color: #BF616A;
+    background-color: #F38BA8; /* Red */
 }
 
 #mpd.stopped {
-    background-color: #3B4252;
+    background-color: #313244; /* Surface0 */
 }
 
 #mpd.paused {
-    background-color: #4C566A;
+    background-color: #585B70; /* Surface2 */
 }
 
 #language {
-    background: #2E3440;
-    background-color: #4C566A;
-    color: #D8DEE9;
+    background: #1E1E2E; /* Base */
+    background-color: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
     padding: 0 5px;
+    margin: 0 0px;
     min-width: 20px;
 }
 
 #keyboard-state {
-    background: #4C566A;
-    color: #D8DEE9;
+    background: #585B70; /* Surface2 */
+    color: #CDD6F4; /* Text */
     padding: 0 5px;
     margin: 0 5px;
-    min-width: 16px;
+    min-width: 20px;
 }
 
 #keyboard-state > label {
@@ -245,11 +244,11 @@ label:focus {
 }
 
 #keyboard-state > label.locked {
-    background: rgba(216, 222, 233, 0.2);
+    background: rgba(205, 214, 244, 0.2); /* Text with opacity */
 }
 
 #scratchpad {
-    background: rgba(216, 222, 233, 0.2);
+    background: rgba(205, 214, 244, 0.2); /* Text with opacity */
 }
 
 #scratchpad.empty {
@@ -262,25 +261,28 @@ label:focus {
 
 #privacy-item {
     padding: 0 5px;
-    color: #D8DEE9;
+    color: #CDD6F4; /* Text */
 }
 
 #privacy-item.screenshare {
-    background-color: #4C566A;
+    background-color: #585B70; /* Surface2 */
 }
 
 #privacy-item.audio-in {
-    background-color: #4C566A;
+    background-color: #585B70; /* Surface2 */
 }
 
 #privacy-item.audio-out {
-    background-color: #4C566A;
+    background-color: #585B70; /* Surface2 */
+}
+
+#custom-weather {
+    margin: 0 0px;
+    padding: 0 0px;
+    color: #CDD6F4; /* Text */
 }
 
 #custom-checkupdates {
-    background: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
-    padding: 0 5px;
-    margin: 0 0px;
-    min-width: 16px;
+    background-color: #585B70;
+    padding: 5px;
 }
