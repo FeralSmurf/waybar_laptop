@@ -1,17 +1,19 @@
+@import 'colors.css';
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: DejaVuSansM Nerd Font, FontAwesome, sans-serif;
     font-size: 16px;
     font-weight: Bold;
     border-radius: 4px;
-    padding: 0px;
+    padding: 2px;
     margin: 0px;
 }
 
 window#waybar {
-    background-color: #1E1E2E; /* Base */
-    border-bottom: 0px solid #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @black;
+    border-bottom: 0px solid @surface2;
+    color: @text;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -20,39 +22,51 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
+.modules-center {
+    margin-left: -220px; /* Adjust the value as needed */
+}
+
 button {
-    box-shadow: inset 0 -3px transparent;
+    box-shadow: inset 0 -2px transparent;
     border: none;
     border-radius: 0;
 }
 
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #CDD6F4; /* Text */
+    box-shadow: inset 0 -2px @text;
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 10px;
+    margin: 0 2px;
     background-color: transparent;
-    color: #CDD6F4; /* Text */
+    color: @text;
+    border-radius: 5px;
+}
+
+#workspaces button.active {
+    background-color: @green;
+    box-shadow: inset 0 -2px @text;
+    color: @base;
 }
 
 #workspaces button:hover {
-    background: rgba(205, 214, 244, 0.2); /* Text with opacity */
+    background: rgba(205, 214, 244, 0.2);
 }
 
 #workspaces button.focused {
-    background-color: #585B70; /* Surface2 */
-    box-shadow: inset 0 -3px #CDD6F4; /* Text */
+    background-color: @base;
+    box-shadow: inset 0 0px @text; /* no bottom border */
 }
 
 #workspaces button.urgent {
-    background-color: #F38BA8; /* Red */
+    background-color: @red;
 }
 
 #mode {
-    background-color: #585B70; /* Surface2 */
-    box-shadow: inset 0 -3px #CDD6F4; /* Text */
+    background-color: @surface2;
+    box-shadow: inset 0 -3px @text;
 }
 
 #clock,
@@ -71,27 +85,27 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #CDD6F4; /* Text */
-    background-color: #1E1E2E; /* Base */
+    color: @text;
+    background-color: @base;
 }
 
 #clock {
-    background-color: #585B70; /* Surface2 */
+    background-color: @surface2;
 }
 
 #battery {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
 }
 
 #battery.charging, #battery.plugged {
-    color: #1E1E2E; /* Base */
-    background-color: #A6E3A1; /* Green */
+    color: @base;
+    background-color: @green;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #F38BA8; /* Red */
-    color: #CDD6F4; /* Text */
+    background-color: @red;
+    color: @text;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -101,8 +115,8 @@ button:hover {
 
 @keyframes blink {
     to {
-        background-color: #CDD6F4; /* Text */
-        color: #1E1E2E; /* Base */
+        background-color: @text;
+        color: @base;
     }
 }
 
@@ -111,80 +125,82 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    background-color: #F38BA8; /* Red */
-    color: #CDD6F4; /* Text */
+    background-color: @red;
+    color: @text;
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #A6E3A1; /* Green */
-    color: #1E1E2E; /* Base */
+    background-color: @green;
+    color: @base;
 }
 
 label:focus {
-    background-color: #585B70; /* Surface2 */
+    background-color: @surface2;
 }
 
 #cpu {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
 }
 
 #memory {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
 }
 
 #disk {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
 }
 
 #backlight {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
 }
 
 #network {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
 }
 
 #network.disconnected {
-    background-color: #F38BA8; /* Red */
+    background-color: @red;
 }
 
 #pulseaudio {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
+    margin: 0 0px;
+    padding: 0 15px;
 }
 
 #pulseaudio.muted {
-    background-color: #313244; /* Surface0 */
-    color: #89B4FA; /* Blue */
+    background-color: @surface0;
+    color: @blue;
 }
 
 #custom-media {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
     min-width: 100px;
 }
 
 #temperature {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
 }
 
 #temperature.critical {
-    background-color: #F38BA8; /* Red */
+    background-color: @red;
 }
 
 #tray {
-    color: #CDD6F4; /* Text */
+    color: @text;
 }
 
 #tray > .passive {
@@ -193,62 +209,61 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #F38BA8; /* Red */
+    background-color: @red;
 }
 
 #idle_inhibitor {
-    background-color: #585B70; /* Surface2 */
+    background-color: @surface2;
 }
 
 #idle_inhibitor.activated {
-    background-color: #CDD6F4; /* Text */
-    color: #1E1E2E; /* Base */
+    background-color: @text;
+    color: @base;
 }
 
 #mpd {
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background-color: @surface2;
+    color: @text;
 }
 
 #mpd.disconnected {
-    background-color: #F38BA8; /* Red */
+    background-color: @red;
 }
 
 #mpd.stopped {
-    background-color: #313244; /* Surface0 */
+    background-color: @surface0;
 }
 
 #mpd.paused {
-    background-color: #585B70; /* Surface2 */
+    background-color: @surface2;
 }
 
 #language {
-    background: #1E1E2E; /* Base */
-    background-color: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background: @base;
+    background-color: @surface2;
+    color: @text;
     padding: 0 5px;
     margin: 0 0px;
-    min-width: 20px;
+    min-width: 30px;
 }
 
 #keyboard-state {
-    background: #585B70; /* Surface2 */
-    color: #CDD6F4; /* Text */
+    background: @surface2;
+    color: @text;
     padding: 0 5px;
-    margin: 0 5px;
-    min-width: 20px;
+    margin: 0 0px;
 }
 
 #keyboard-state > label {
-    padding: 0 5px;
+    padding: 0 0px;
 }
 
 #keyboard-state > label.locked {
-    background: rgba(205, 214, 244, 0.2); /* Text with opacity */
+    background: rgba(166, 227, 161, 0.5);
 }
 
 #scratchpad {
-    background: rgba(205, 214, 244, 0.2); /* Text with opacity */
+    background: rgba(205, 214, 244, 0.2);
 }
 
 #scratchpad.empty {
@@ -261,28 +276,28 @@ label:focus {
 
 #privacy-item {
     padding: 0 5px;
-    color: #CDD6F4; /* Text */
+    color: @text;
 }
 
 #privacy-item.screenshare {
-    background-color: #585B70; /* Surface2 */
+    background-color: @surface2;
 }
 
 #privacy-item.audio-in {
-    background-color: #585B70; /* Surface2 */
+    background-color: @surface2;
 }
 
 #privacy-item.audio-out {
-    background-color: #585B70; /* Surface2 */
+    background-color: @surface2;
 }
 
 #custom-weather {
     margin: 0 0px;
     padding: 0 0px;
-    color: #CDD6F4; /* Text */
+    color: @text;
 }
 
 #custom-checkupdates {
-    background-color: #585B70;
+    background-color: @surface2;
     padding: 5px;
 }
